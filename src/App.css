@@ -1,38 +1,85 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,*:before,*:after{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+input,button,textarea{font-family:inherit;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  max-width: 87.5rem;
+  padding: 0 1.25rem;
+  margin: 1rem auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.collapse {
+  background-color: #fff;
+  box-shadow: 1px 1px 5px 0px rgba(#000, 0.3);
+  border-radius: 0.4rem;
+  margin: 0.3rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.collapse__container{
+  padding: 0.8rem 1rem; 
+}
+.collapse__btn {
+    font-size: 1rem;
+    color: #fff;
+    padding: 0.5rem;
+    background-color: rgb(83, 127, 222);
+    border-radius: 0.5rem;
+    outline: 4px solid transparent;
+    margin: 0 0 1rem;
+    transition: background-color 0.2s ease-in-out;
+}
+.collapse__btn:hover, .collapse__btn:active {
+  background-color: rgb(59, 89, 154);
+  transition: background-color 0.4s;
+}
+
+.collapse__btn:focus {
+  outline-color: rgb(179, 193, 226);
+  transition: outline-color .4s ease-in-out;
+}
+
+.collapse__content {
+  overflow: hidden;
+}
+
+
+.collapse__content_collapse {
+  max-height: 100px;
+  transition: max-height 1s ease-in-out;
+}
+
+@media (max-width: 640px) {
+  .collapse__content_collapse {
+    max-height: 130px;
   }
-  to {
-    transform: rotate(360deg);
+}
+@media (max-width: 500px) {
+  .collapse__content_collapse {
+    max-height: 230px;
   }
+}
+
+.collapse__content_expand {
+  max-height: 0;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.collapse__text {
+  padding: 0.7rem;
+  border: 1px solid rgba(grey, 0.3);
+  border-radius: 0.5rem;
 }
